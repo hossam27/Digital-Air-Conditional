@@ -6,13 +6,13 @@
  */
 
 
-#include "Conc.h"
-#include "util.h"
-#include "Types.h"
+#include "../Shared library/Conc.h"
+#include "../Shared library/util.h"
+#include "../Shared library/Types.h"
 
-#include "DIO_config.h"
-#include "DIO_private.h"
-#include "DIO_interface.h"
+#include "../../MCAL/DIO/DIO_config.h"
+#include "../../MCAL/DIO/DIO_private.h"
+#include "../../MCAL/DIO/DIO_interface.h"
 
 #include "TACTILE_config.h"
 #include "TACTILE_private.h"
@@ -38,7 +38,7 @@ const u8 TACTILE_u8TactileType[TACTILE_u8MAXNUM]=	{TACTILE_u8Switch1Type ,TACTIL
 /*Comment!: Get Tactile State */
 extern u8 TACTILE_u8GetState(u8 Copy_u8SwitchNumber, u8* Copy_u8PtrToVal)
 {
-	u8 Local_u8Error=u8OK;
+	u8 Local_u8Error=OK;
 	u8 Local_u8TactileVal;
 //	u8 TACTILE_u8=TACTILE_u8TactileType[Copy_u8SwitchNumber];
 	static u8 TACTILE_u8State[TACTILE_u8SWITCHNUM]		=	{TACTILE_u8RELEASED};
@@ -47,7 +47,7 @@ extern u8 TACTILE_u8GetState(u8 Copy_u8SwitchNumber, u8* Copy_u8PtrToVal)
 	static u8 TACTILE_u8TactileVal[TACTILE_u8SWITCHNUM]= 	{TACTILE_u8RELEASED};
 	if(Copy_u8SwitchNumber > TACTILE_u8MAXNUM)
 	{
-		Local_u8Error=u8ERROR;
+		Local_u8Error=ERROR;
 	}
 	else{
 		DIO_u8ReadPinVal(TACTILE_u8TactilePins[Copy_u8SwitchNumber],&Local_u8TactileVal);

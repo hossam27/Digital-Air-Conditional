@@ -5,9 +5,9 @@
  *      Author: Belal
  */
 
-#include "../../Code/Air_Conditioner_Screen/BSW/Shared library/Types.h"
-
-
+#include "../BSW/Shared library/Types.h"
+#include "../BSW/Switch/TACTILE_interface.h"
+#include "../BSW/lcd/LCD_Interface.h"
 int main (void){
 
 
