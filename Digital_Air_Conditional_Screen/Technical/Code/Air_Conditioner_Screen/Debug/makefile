@@ -13,6 +13,7 @@ RM := rm -rf
 -include MCAL/DIO/subdir.mk
 -include BSW/lcd/subdir.mk
 -include BSW/Switch/subdir.mk
+-include App/subdir.mk
 -include subdir.mk
 -include objects.mk
 
