@@ -14,8 +14,8 @@ typedef  float f32 ;
 typedef  double f64 ;
 
 /*Comment!: Return Indicator  */
-#define u8ERROR 		0
-#define u8OK 			1
+#define   ERROR 		0
+#define   OK 			1
 #define u8ZERO			0
 #define u8ONE			1
 #define u8TWO			2
