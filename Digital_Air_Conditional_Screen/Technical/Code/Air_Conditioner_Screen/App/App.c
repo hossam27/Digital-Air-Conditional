@@ -65,8 +65,8 @@ void app(void)
 	LCD_VoidGotoxy(2,2);
 	LCD_VoidString(Local_u8Words[1]);
 	TACTILE_u8GetState(TACTILE_u8Switch1,&Select_SW_State);
-	TACTILE_u8GetState(TACTILE_u8Switch3,&Up_SW_State);
-	TACTILE_u8GetState(TACTILE_u8Switch4,&Down_SW_State);
+	TACTILE_u8GetState(TACTILE_u8Switch2,&Up_SW_State);
+	TACTILE_u8GetState(TACTILE_u8Switch3,&Down_SW_State);
 	Local_u8Check=(Select_SW_State<<SELECT_BIT)|(Up_SW_State<<UP_BIT)|(Down_SW_State<<DOWN_BIT);
 	switch(Local_u8State)
 	{

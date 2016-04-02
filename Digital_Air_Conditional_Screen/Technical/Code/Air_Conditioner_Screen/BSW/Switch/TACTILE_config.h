@@ -10,7 +10,7 @@
 
 // Comment: Number of supported switches //
 // Range: 1-32//
-#define TACTILE_u8SWITCHNUM	1
+#define TACTILE_u8SWITCHNUM		3
 
 
 
