@@ -38,11 +38,11 @@
 #define    DIO_u8PIN_INITDIR24			DIO_u8OUTPUT
 #define    DIO_u8PIN_INITDIR25          DIO_u8OUTPUT
 #define    DIO_u8PIN_INITDIR26          DIO_u8OUTPUT
-#define    DIO_u8PIN_INITDIR27          DIO_u8INPUT
-#define    DIO_u8PIN_INITDIR28          DIO_u8INPUT
-#define    DIO_u8PIN_INITDIR29          DIO_u8INPUT
-#define    DIO_u8PIN_INITDIR30          DIO_u8INPUT
-#define    DIO_u8PIN_INITDIR31          DIO_u8INPUT
+#define    DIO_u8PIN_INITDIR27          DIO_u8OUTPUT
+#define    DIO_u8PIN_INITDIR28          DIO_u8OUTPUT
+#define    DIO_u8PIN_INITDIR29          DIO_u8OUTPUT
+#define    DIO_u8PIN_INITDIR30          DIO_u8OUTPUT
+#define    DIO_u8PIN_INITDIR31          DIO_u8OUTPUT
 
 /*Comment!: PIN initial value*/
 /*Range!: DIO_u8LOW~DIO_u8HIGH*/

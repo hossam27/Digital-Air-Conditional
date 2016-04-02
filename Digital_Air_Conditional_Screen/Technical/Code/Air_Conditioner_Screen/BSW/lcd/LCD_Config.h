@@ -16,7 +16,7 @@
 
 /*Comment:Choose control Pins of lcd */
 /*Range : LCD_u8Bit8 and LCD_u8Bit4*/
-#define LCD_u8LcdMode			LCD_u8Bit4
+#define LCD_u8LcdMode			LCD_u8Bit8
 
 /*Comment:Choose Data Pins of lcd */
 /*Range : DIO_u8Pin(0~31)*/

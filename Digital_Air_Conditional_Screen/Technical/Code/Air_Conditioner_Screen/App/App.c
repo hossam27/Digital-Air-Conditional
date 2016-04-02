@@ -10,6 +10,7 @@
 #include "../BSW/lcd/LCD_Interface.h"
 #include "../MCAL/DIO/DIO_interface.h"
 #include "../MCAL/EEPROM/EEPROM_interface.h"
+#include "../BSW/Shared library/delay.h"
 
 //#define TURNOFF		0
 #define DISPLAY		3
@@ -37,6 +38,7 @@
 #define SPEED_ADDRESS	0x04F
 
 void Local_voidDisplay(u8 Copy_u8Temp,u8 Copy_u8Speed);
+void app(void);
 
 
 int main (void){
@@ -44,11 +46,13 @@ int main (void){
 	TACTILE_voidInit();
 	LCD_VoidInit();
 	EEPROM_voidInit();
+	LCD_VoidData('A');
+	Delay_ms_Max1s(100);
 	EEPROM_voidWriteByte(20,TEMP_ADDRESS);
 	EEPROM_voidWriteByte(2,SPEED_ADDRESS);
 	//LCD_VoidString("sfs");
 	while (1){
-
+		 app();
 	}
 
 	return 0 ;
