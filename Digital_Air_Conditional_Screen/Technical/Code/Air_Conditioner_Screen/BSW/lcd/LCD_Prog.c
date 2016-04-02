@@ -22,14 +22,14 @@ void LCD_VoidCmd(u8 LCD_u8Command)
 	#if (LCD_u8LcdMode == LCD_u8Bit8)
 	DIO_u8WritePinVal(LCD_u8Reset,DIO_u8LOW );
 
-	DIO_u8WritePinVal(LCD_u8D0,(LCD_u8Command&Lcd_u8Bit0 ));
-	DIO_u8WritePinVal(LCD_u8D1,(LCD_u8Command&Lcd_u8Bit1 ));
-	DIO_u8WritePinVal(LCD_u8D2,(LCD_u8Command&Lcd_u8Bit2 ));
-	DIO_u8WritePinVal(LCD_u8D3,(LCD_u8Command&Lcd_u8Bit3 ));
-	DIO_u8WritePinVal(LCD_u8D4,(LCD_u8Command&Lcd_u8Bit4 ));
-	DIO_u8WritePinVal(LCD_u8D5,(LCD_u8Command&Lcd_u8Bit5 ));
-	DIO_u8WritePinVal(LCD_u8D6,(LCD_u8Command&Lcd_u8Bit6 ));
-	DIO_u8WritePinVal(LCD_u8D7,(LCD_u8Command&Lcd_u8Bit7 ));
+	DIO_u8WritePinVal(LCD_u8D0,(LCD_u8Command&Lcd_u8Bit0 )>>0);
+	DIO_u8WritePinVal(LCD_u8D1,(LCD_u8Command&Lcd_u8Bit1 )>>1);
+	DIO_u8WritePinVal(LCD_u8D2,(LCD_u8Command&Lcd_u8Bit2 )>>2);
+	DIO_u8WritePinVal(LCD_u8D3,(LCD_u8Command&Lcd_u8Bit3 )>>3);
+	DIO_u8WritePinVal(LCD_u8D4,(LCD_u8Command&Lcd_u8Bit4 )>>4);
+	DIO_u8WritePinVal(LCD_u8D5,(LCD_u8Command&Lcd_u8Bit5 )>>5);
+	DIO_u8WritePinVal(LCD_u8D6,(LCD_u8Command&Lcd_u8Bit6 )>>6);
+	DIO_u8WritePinVal(LCD_u8D7,(LCD_u8Command&Lcd_u8Bit7 )>>7);
 
 	LCD_EnableLcd();
 
@@ -94,14 +94,14 @@ void LCD_VoidData(u8 LCD_u8Data)
 
 	DIO_u8WritePinVal(LCD_u8Reset,DIO_u8HIGH );
 
-	DIO_u8WritePinVal(LCD_u8D0,(LCD_u8Data&Lcd_u8Bit0 )  );
-	DIO_u8WritePinVal(LCD_u8D1,(LCD_u8Data&Lcd_u8Bit1 )  );
-	DIO_u8WritePinVal(LCD_u8D2,(LCD_u8Data&Lcd_u8Bit2 )  );
-	DIO_u8WritePinVal(LCD_u8D3,(LCD_u8Data&Lcd_u8Bit3 )  );
-	DIO_u8WritePinVal(LCD_u8D4,(LCD_u8Data&Lcd_u8Bit4 )  );
-	DIO_u8WritePinVal(LCD_u8D5,(LCD_u8Data&Lcd_u8Bit5 )  );
-	DIO_u8WritePinVal(LCD_u8D6,(LCD_u8Data&Lcd_u8Bit6 )  );
-	DIO_u8WritePinVal(LCD_u8D7,(LCD_u8Data&Lcd_u8Bit7 )  );
+	DIO_u8WritePinVal(LCD_u8D0,(LCD_u8Data&Lcd_u8Bit0 )>>0  );
+	DIO_u8WritePinVal(LCD_u8D1,(LCD_u8Data&Lcd_u8Bit1 )>>1 );
+	DIO_u8WritePinVal(LCD_u8D2,(LCD_u8Data&Lcd_u8Bit2 )>>2  );
+	DIO_u8WritePinVal(LCD_u8D3,(LCD_u8Data&Lcd_u8Bit3 )>>3 );
+	DIO_u8WritePinVal(LCD_u8D4,(LCD_u8Data&Lcd_u8Bit4 )>>4  );
+	DIO_u8WritePinVal(LCD_u8D5,(LCD_u8Data&Lcd_u8Bit5 )>>5  );
+	DIO_u8WritePinVal(LCD_u8D6,(LCD_u8Data&Lcd_u8Bit6 )>>6);
+	DIO_u8WritePinVal(LCD_u8D7,(LCD_u8Data&Lcd_u8Bit7 )>>7  );
 
 	//ctrl = (1<<rs)|(0<<rw)|(1<<en); // RW as LOW and RS, EN as HIGH
 	LCD_EnableLcd();
