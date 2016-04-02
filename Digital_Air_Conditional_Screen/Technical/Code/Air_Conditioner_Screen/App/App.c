@@ -46,7 +46,7 @@ int main (void){
 	TACTILE_voidInit();
 	LCD_VoidInit();
 	EEPROM_voidInit();
-	LCD_VoidData('A');
+	//LCD_VoidData('A');
 	Delay_ms_Max1s(100);
 	EEPROM_voidWriteByte(20,TEMP_ADDRESS);
 	EEPROM_voidWriteByte(2,SPEED_ADDRESS);
