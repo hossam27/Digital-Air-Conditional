@@ -37,6 +37,12 @@ endif
 LSS += \
 Air_Conditioner_Screen.lss \
 
+FLASH_IMAGE += \
+Air_Conditioner_Screen.hex \
+
+EEPROM_IMAGE += \
+Air_Conditioner_Screen.eep \
+
 SIZEDUMMY += \
 sizedummy \
 
@@ -58,6 +64,18 @@ Air_Conditioner_Screen.lss: Air_Conditioner_Screen.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 
+Air_Conditioner_Screen.hex: Air_Conditioner_Screen.elf
+	@echo 'Create Flash image (ihex format)'
+	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Air_Conditioner_Screen.elf  "Air_Conditioner_Screen.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
+Air_Conditioner_Screen.eep: Air_Conditioner_Screen.elf
+	@echo 'Create eeprom image (ihex format)'
+	-avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex Air_Conditioner_Screen.elf  "Air_Conditioner_Screen.eep"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 sizedummy: Air_Conditioner_Screen.elf
 	@echo 'Invoking: Print Size'
 	-avr-size --format=avr --mcu=atmega32 Air_Conditioner_Screen.elf
@@ -66,10 +84,10 @@ sizedummy: Air_Conditioner_Screen.elf
 
 # Other Targets
 clean:
-	-$(RM) $(ELFS)$(OBJS)$(ASM_DEPS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) Air_Conditioner_Screen.elf
+	-$(RM) $(FLASH_IMAGE)$(ELFS)$(OBJS)$(ASM_DEPS)$(EEPROM_IMAGE)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) Air_Conditioner_Screen.elf
 	-@echo ' '
 
-secondary-outputs: $(LSS) $(SIZEDUMMY)
+secondary-outputs: $(LSS) $(FLASH_IMAGE) $(EEPROM_IMAGE) $(SIZEDUMMY)
 
 .PHONY: all clean dependents
 .SECONDARY:
