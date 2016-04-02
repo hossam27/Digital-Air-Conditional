@@ -61,7 +61,7 @@ int main (void){
 void app(void)
 {
 	u8 Local_u8Words[2][7]={"Temp=","Speed="};
-	u8 Select_SW_State,Up_SW_State,Down_SW_State,Local_u8Check;
+	u8 Select_SW_State=RELEASE,Up_SW_State=RELEASE,Down_SW_State=RELEASE,Local_u8Check;
 	static u8 Local_u8State=DISPLAY;
 	static u8 Local_u8ModeFlag=TEMP;
 	static u8 Local_u8UpDownFlag=RELEASE;
@@ -75,6 +75,7 @@ void app(void)
 	TACTILE_u8GetState(TACTILE_u8Switch2,&Up_SW_State);
 	TACTILE_u8GetState(TACTILE_u8Switch3,&Down_SW_State);
 	Local_u8Check=(Select_SW_State<<SELECT_BIT)|(Up_SW_State<<UP_BIT)|(Down_SW_State<<DOWN_BIT);
+	DIO_u8WritePortVal(1,Local_u8Check);
 	switch(Local_u8State)
 	{
 	case DISPLAY:
