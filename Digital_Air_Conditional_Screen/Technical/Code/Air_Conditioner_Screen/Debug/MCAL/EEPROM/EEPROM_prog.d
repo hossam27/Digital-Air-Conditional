@@ -1,4 +1,4 @@
-MCAL/EEPROM/EEPROM_prog.o MCAL/EEPROM/EEPROM_prog.o:  \
+MCAL/EEPROM/EEPROM_prog.d MCAL/EEPROM/EEPROM_prog.o:  \
  ../MCAL/EEPROM/EEPROM_prog.c \
   ../MCAL/EEPROM/../../BSW/Shared\ library/Types.h \
   ../MCAL/EEPROM/../../BSW/Shared\ library/util.h \
