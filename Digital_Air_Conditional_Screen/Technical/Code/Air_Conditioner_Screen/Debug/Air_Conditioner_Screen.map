@@ -126,7 +126,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xb8e
+.text           0x00000000      0xbb2
  *(.vectors)
  .vectors       0x00000000       0x54 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vectors
@@ -226,99 +226,99 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x000000a4        0xa ./MCAL/EEPROM/EEPROM_prog.o
                 0x000000a4                EEPROM_u8ReadByte
  .text.DIO_voidInit
-                0x000000ae       0x20 ./MCAL/DIO/DIO_prog.o
+                0x000000ae       0x28 ./MCAL/DIO/DIO_prog.o
                 0x000000ae                DIO_voidInit
  .text.DIO_u8ReadPortDir
-                0x000000ce       0x24 ./MCAL/DIO/DIO_prog.o
-                0x000000ce                DIO_u8ReadPortDir
+                0x000000d6       0x24 ./MCAL/DIO/DIO_prog.o
+                0x000000d6                DIO_u8ReadPortDir
  .text.DIO_u8WritePortDir
-                0x000000f2       0x20 ./MCAL/DIO/DIO_prog.o
-                0x000000f2                DIO_u8WritePortDir
+                0x000000fa       0x20 ./MCAL/DIO/DIO_prog.o
+                0x000000fa                DIO_u8WritePortDir
  .text.DIO_u8ReadPortVal
-                0x00000112       0x24 ./MCAL/DIO/DIO_prog.o
-                0x00000112                DIO_u8ReadPortVal
+                0x0000011a       0x24 ./MCAL/DIO/DIO_prog.o
+                0x0000011a                DIO_u8ReadPortVal
  .text.DIO_u8WritePortVal
-                0x00000136       0x20 ./MCAL/DIO/DIO_prog.o
-                0x00000136                DIO_u8WritePortVal
+                0x0000013e       0x20 ./MCAL/DIO/DIO_prog.o
+                0x0000013e                DIO_u8WritePortVal
  .text.DIO_u8ReadPinDir
-                0x00000156       0x52 ./MCAL/DIO/DIO_prog.o
-                0x00000156                DIO_u8ReadPinDir
+                0x0000015e       0x52 ./MCAL/DIO/DIO_prog.o
+                0x0000015e                DIO_u8ReadPinDir
  .text.DIO_u8WritePinDir
-                0x000001a8       0x54 ./MCAL/DIO/DIO_prog.o
-                0x000001a8                DIO_u8WritePinDir
+                0x000001b0       0x54 ./MCAL/DIO/DIO_prog.o
+                0x000001b0                DIO_u8WritePinDir
  .text.DIO_u8ReadPinVal
-                0x000001fc       0x52 ./MCAL/DIO/DIO_prog.o
-                0x000001fc                DIO_u8ReadPinVal
+                0x00000204       0x52 ./MCAL/DIO/DIO_prog.o
+                0x00000204                DIO_u8ReadPinVal
  .text.DIO_u8WritePinVal
-                0x0000024e       0x54 ./MCAL/DIO/DIO_prog.o
-                0x0000024e                DIO_u8WritePinVal
+                0x00000256       0x54 ./MCAL/DIO/DIO_prog.o
+                0x00000256                DIO_u8WritePinVal
  .text.LCD_u16ReturnString
-                0x000002a2       0xfe ./BSW/lcd/LCD_Prog.o
-                0x000002a2                LCD_u16ReturnString
+                0x000002aa       0xfe ./BSW/lcd/LCD_Prog.o
+                0x000002aa                LCD_u16ReturnString
  .text.LCD_EnableLcd
-                0x000003a0       0x32 ./BSW/lcd/LCD_Prog.o
-                0x000003a0                LCD_EnableLcd
+                0x000003a8       0x32 ./BSW/lcd/LCD_Prog.o
+                0x000003a8                LCD_EnableLcd
  .text.LCD_WaitLcd
-                0x000003d2       0xf0 ./BSW/lcd/LCD_Prog.o
-                0x000003d2                LCD_WaitLcd
+                0x000003da       0xf0 ./BSW/lcd/LCD_Prog.o
+                0x000003da                LCD_WaitLcd
  .text.LCD_VoidData
-                0x000004c2       0xc4 ./BSW/lcd/LCD_Prog.o
-                0x000004c2                LCD_VoidData
+                0x000004ca       0xc4 ./BSW/lcd/LCD_Prog.o
+                0x000004ca                LCD_VoidData
  .text.LCD_VoidString
-                0x00000586       0x1e ./BSW/lcd/LCD_Prog.o
-                0x00000586                LCD_VoidString
+                0x0000058e       0x1e ./BSW/lcd/LCD_Prog.o
+                0x0000058e                LCD_VoidString
  .text.LCD_VoidCmd
-                0x000005a4       0xc4 ./BSW/lcd/LCD_Prog.o
-                0x000005a4                LCD_VoidCmd
+                0x000005ac       0xc4 ./BSW/lcd/LCD_Prog.o
+                0x000005ac                LCD_VoidCmd
  .text.LCD_VoidClearScreen
-                0x00000668        0x8 ./BSW/lcd/LCD_Prog.o
-                0x00000668                LCD_VoidClearScreen
+                0x00000670        0x8 ./BSW/lcd/LCD_Prog.o
+                0x00000670                LCD_VoidClearScreen
  .text.LCD_VoidGotoxy
-                0x00000670       0x14 ./BSW/lcd/LCD_Prog.o
-                0x00000670                LCD_VoidGotoxy
+                0x00000678       0x14 ./BSW/lcd/LCD_Prog.o
+                0x00000678                LCD_VoidGotoxy
  .text.LCD_VoidRow
-                0x00000684       0x1a ./BSW/lcd/LCD_Prog.o
-                0x00000684                LCD_VoidRow
+                0x0000068c       0x1a ./BSW/lcd/LCD_Prog.o
+                0x0000068c                LCD_VoidRow
  .text.LCD_VoidInit
-                0x0000069e       0x66 ./BSW/lcd/LCD_Prog.o
-                0x0000069e                LCD_VoidInit
+                0x000006a6       0x66 ./BSW/lcd/LCD_Prog.o
+                0x000006a6                LCD_VoidInit
  .text.LCD_ClearLcd
-                0x00000704        0x8 ./BSW/lcd/LCD_Prog.o
-                0x00000704                LCD_ClearLcd
+                0x0000070c        0x8 ./BSW/lcd/LCD_Prog.o
+                0x0000070c                LCD_ClearLcd
  .text.LCD_VoidSendStringxy
-                0x0000070c       0x30 ./BSW/lcd/LCD_Prog.o
-                0x0000070c                LCD_VoidSendStringxy
+                0x00000714       0x30 ./BSW/lcd/LCD_Prog.o
+                0x00000714                LCD_VoidSendStringxy
  .text.LCD_VoidRowString
-                0x0000073c       0x32 ./BSW/lcd/LCD_Prog.o
-                0x0000073c                LCD_VoidRowString
+                0x00000744       0x32 ./BSW/lcd/LCD_Prog.o
+                0x00000744                LCD_VoidRowString
  .text.TACTILE_voidInit
-                0x0000076e        0x2 ./BSW/Switch/TACTILE_prog.o
-                0x0000076e                TACTILE_voidInit
+                0x00000776        0x2 ./BSW/Switch/TACTILE_prog.o
+                0x00000776                TACTILE_voidInit
  .text.TACTILE_u8GetState
-                0x00000770      0x10e ./BSW/Switch/TACTILE_prog.o
-                0x00000770                TACTILE_u8GetState
+                0x00000778      0x10e ./BSW/Switch/TACTILE_prog.o
+                0x00000778                TACTILE_u8GetState
  .text.Local_voidDisplay
-                0x0000087e       0x44 ./App/App.o
-                0x0000087e                Local_voidDisplay
- .text.main     0x000008c2       0x12 ./App/App.o
-                0x000008c2                main
- .text.app      0x000008d4      0x250 ./App/App.o
-                0x000008d4                app
- .text.libgcc   0x00000b24       0x18 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
-                0x00000b24                __udivmodqi4
- .text.libgcc   0x00000b3c       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
-                0x00000b3c                __udivmodhi4
- .text.libgcc   0x00000b64       0x26 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
-                0x00000b64                __divmodhi4
-                0x00000b64                _div
- .text.libgcc   0x00000b8a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x00000b8a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00000b8a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
-                0x00000b8a                . = ALIGN (0x2)
+                0x00000886       0x44 ./App/App.o
+                0x00000886                Local_voidDisplay
+ .text.main     0x000008ca       0x2e ./App/App.o
+                0x000008ca                main
+ .text.app      0x000008f8      0x250 ./App/App.o
+                0x000008f8                app
+ .text.libgcc   0x00000b48       0x18 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+                0x00000b48                __udivmodqi4
+ .text.libgcc   0x00000b60       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000b60                __udivmodhi4
+ .text.libgcc   0x00000b88       0x26 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
+                0x00000b88                __divmodhi4
+                0x00000b88                _div
+ .text.libgcc   0x00000bae        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00000bae        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000bae        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                0x00000bae                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000b8a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x00000b8a                exit
-                0x00000b8a                _exit
+ .fini9         0x00000bae        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00000bae                exit
+                0x00000bae                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -337,11 +337,11 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000b8a        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000bae        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000b8e                _etext = .
+                0x00000bb2                _etext = .
 
-.data           0x00800060       0x48 load address 0x00000b8e
+.data           0x00800060       0x4c load address 0x00000bb2
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
@@ -349,75 +349,75 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .data          0x00800060        0x0 ./MCAL/DIO/DIO_prog.o
  .data          0x00800060        0x0 ./BSW/lcd/LCD_Prog.o
  .data          0x00800060        0x0 ./BSW/Switch/TACTILE_prog.o
- .data          0x00800060        0xe ./App/App.o
- .data          0x0080006e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
- .data          0x0080006e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
- .data          0x0080006e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
- .data          0x0080006e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .data          0x0080006e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .data          0x0080006e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .data          0x00800060       0x12 ./App/App.o
+ .data          0x00800072        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+ .data          0x00800072        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .data          0x00800072        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
+ .data          0x00800072        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .data          0x00800072        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .data          0x00800072        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
  *(.data*)
  .data.Local_u8State.1270
-                0x0080006e        0x1 ./App/App.o
+                0x00800072        0x1 ./App/App.o
  *(.rodata)
  *(.rodata*)
  .rodata.DIO_u8WritePortArr
-                0x0080006f        0x8 ./MCAL/DIO/DIO_prog.o
+                0x00800073        0x8 ./MCAL/DIO/DIO_prog.o
  .rodata.DIO_u8ReadPortArr
-                0x00800077        0x8 ./MCAL/DIO/DIO_prog.o
+                0x0080007b        0x8 ./MCAL/DIO/DIO_prog.o
  .rodata.DIO_u8RWDirArr
-                0x0080007f        0x8 ./MCAL/DIO/DIO_prog.o
+                0x00800083        0x8 ./MCAL/DIO/DIO_prog.o
  .rodata.TACTILE_u8TactilePins
-                0x00800087       0x10 ./BSW/Switch/TACTILE_prog.o
-                0x00800087                TACTILE_u8TactilePins
+                0x0080008b       0x10 ./BSW/Switch/TACTILE_prog.o
+                0x0080008b                TACTILE_u8TactilePins
  .rodata.TACTILE_u8TactileType
-                0x00800097       0x10 ./BSW/Switch/TACTILE_prog.o
-                0x00800097                TACTILE_u8TactileType
+                0x0080009b       0x10 ./BSW/Switch/TACTILE_prog.o
+                0x0080009b                TACTILE_u8TactileType
  *(.gnu.linkonce.d*)
-                0x008000a8                . = ALIGN (0x2)
- *fill*         0x008000a7        0x1 00
-                0x008000a8                _edata = .
-                0x008000a8                PROVIDE (__data_end, .)
+                0x008000ac                . = ALIGN (0x2)
+ *fill*         0x008000ab        0x1 00
+                0x008000ac                _edata = .
+                0x008000ac                PROVIDE (__data_end, .)
 
-.bss            0x008000a8       0x17
-                0x008000a8                PROVIDE (__bss_start, .)
+.bss            0x008000ac       0x17
+                0x008000ac                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x008000a8        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
- .bss           0x008000a8        0x0 ./MCAL/EEPROM/EEPROM_prog.o
- .bss           0x008000a8        0x0 ./MCAL/DIO/DIO_prog.o
- .bss           0x008000a8        0x0 ./BSW/lcd/LCD_Prog.o
- .bss           0x008000a8        0x0 ./BSW/Switch/TACTILE_prog.o
- .bss           0x008000a8        0x0 ./App/App.o
- .bss           0x008000a8        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
- .bss           0x008000a8        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
- .bss           0x008000a8        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
- .bss           0x008000a8        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .bss           0x008000a8        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .bss           0x008000a8        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x008000ac        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .bss           0x008000ac        0x0 ./MCAL/EEPROM/EEPROM_prog.o
+ .bss           0x008000ac        0x0 ./MCAL/DIO/DIO_prog.o
+ .bss           0x008000ac        0x0 ./BSW/lcd/LCD_Prog.o
+ .bss           0x008000ac        0x0 ./BSW/Switch/TACTILE_prog.o
+ .bss           0x008000ac        0x0 ./App/App.o
+ .bss           0x008000ac        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+ .bss           0x008000ac        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .bss           0x008000ac        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
+ .bss           0x008000ac        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .bss           0x008000ac        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .bss           0x008000ac        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
  *(.bss*)
  .bss.Local_u16ProcessedString.1361
-                0x008000a8        0xa ./BSW/lcd/LCD_Prog.o
+                0x008000ac        0xa ./BSW/lcd/LCD_Prog.o
  .bss.TACTILE_u8TactileVal.1233
-                0x008000b2        0x3 ./BSW/Switch/TACTILE_prog.o
+                0x008000b6        0x3 ./BSW/Switch/TACTILE_prog.o
  .bss.TACTILE_u8CounterDown.1232
-                0x008000b5        0x3 ./BSW/Switch/TACTILE_prog.o
+                0x008000b9        0x3 ./BSW/Switch/TACTILE_prog.o
  .bss.TACTILE_u8CounterUp.1231
-                0x008000b8        0x3 ./BSW/Switch/TACTILE_prog.o
+                0x008000bc        0x3 ./BSW/Switch/TACTILE_prog.o
  .bss.TACTILE_u8State.1230
-                0x008000bb        0x3 ./BSW/Switch/TACTILE_prog.o
+                0x008000bf        0x3 ./BSW/Switch/TACTILE_prog.o
  .bss.Local_u8ModeFlag.1271
-                0x008000be        0x1 ./App/App.o
+                0x008000c2        0x1 ./App/App.o
  *(COMMON)
-                0x008000bf                PROVIDE (__bss_end, .)
-                0x00000b8e                __data_load_start = LOADADDR (.data)
-                0x00000bd6                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x008000c3                PROVIDE (__bss_end, .)
+                0x00000bb2                __data_load_start = LOADADDR (.data)
+                0x00000bfe                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008000bf        0x0
-                0x008000bf                PROVIDE (__noinit_start, .)
+.noinit         0x008000c3        0x0
+                0x008000c3                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x008000bf                PROVIDE (__noinit_end, .)
-                0x008000bf                _end = .
-                0x008000bf                PROVIDE (__heap_start, .)
+                0x008000c3                PROVIDE (__noinit_end, .)
+                0x008000c3                _end = .
+                0x008000c3                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -435,7 +435,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x00000000     0x1ab8
+.stab           0x00000000     0x1adc
  *(.stab)
  .stab          0x00000000      0x288 ./MCAL/EEPROM/EEPROM_prog.o
  .stab          0x00000288      0x630 ./MCAL/DIO/DIO_prog.o
@@ -444,8 +444,8 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                                 0x930 (size before relaxing)
  .stab          0x000011dc      0x390 ./BSW/Switch/TACTILE_prog.o
                                 0x39c (size before relaxing)
- .stab          0x0000156c      0x54c ./App/App.o
-                                0x558 (size before relaxing)
+ .stab          0x0000156c      0x570 ./App/App.o
+                                0x57c (size before relaxing)
 
 .stabstr        0x00000000      0xc3e
  *(.stabstr)

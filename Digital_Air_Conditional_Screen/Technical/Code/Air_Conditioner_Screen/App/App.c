@@ -44,6 +44,9 @@ int main (void){
 	TACTILE_voidInit();
 	LCD_VoidInit();
 	EEPROM_voidInit();
+	EEPROM_voidWriteByte(20,TEMP_ADDRESS);
+	EEPROM_voidWriteByte(2,SPEED_ADDRESS);
+	//LCD_VoidString("sfs");
 	while (1){
 
 	}
