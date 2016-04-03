@@ -117,7 +117,7 @@ void app(void)
 		{
 		case SELECT_SW_PRESSED:
 			//LCD_VoidClearScreen();
-			Local_u8State=0;
+			Local_u8ModeFlag=0;
 			break;
 		case UP_SW_PRESSED:
 //			if(Local_u8Flag==0)
