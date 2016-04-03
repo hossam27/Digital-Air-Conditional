@@ -31,11 +31,12 @@
 #define PRESSED			1
 #define RELEASE			0
 
-#define SELECT_AROW		0x63
-#define EMPTY			0x32
+#define SELECT_AROW		0x3E
+#define DASH			0x2D
+#define EMPTY			0x20
 
-#define TEMP_ADDRESS	0x05F
-#define SPEED_ADDRESS	0x04F
+#define TEMP_ADDRESS	0x5F
+#define SPEED_ADDRESS	0x4F
 
 void Local_voidDisplay(u8 Copy_u8Temp,u8 Copy_u8Speed);
 void app(void);
@@ -47,7 +48,6 @@ int main (void){
 	LCD_VoidInit();
 	EEPROM_voidInit();
 	//LCD_VoidData('A');
-	Delay_ms_Max1s(100);
 	EEPROM_voidWriteByte(20,TEMP_ADDRESS);
 	EEPROM_voidWriteByte(2,SPEED_ADDRESS);
 	//LCD_VoidString("sfs");
@@ -61,21 +61,29 @@ int main (void){
 void app(void)
 {
 	u8 Local_u8Words[2][7]={"Temp=","Speed="};
+	//u8 Local_u8Arrow[2]={DASH##SELECT_AROW"};
 	u8 Select_SW_State=RELEASE,Up_SW_State=RELEASE,Down_SW_State=RELEASE,Local_u8Check;
 	static u8 Local_u8State=DISPLAY;
-	static u8 Local_u8ModeFlag=TEMP;
-	static u8 Local_u8UpDownFlag=RELEASE;
+	static u8 Local_u8ModeToState=TEMP;
+	static u8 Local_u8SelectFlag=0;
+	static u8 Local_u8Flag=1;
+	static u8 Local_u8ModeFlag=1;
+	//static u8 Local_u8UpDownFlag=RELEASE;
 	u8 Local_u8Temp=EEPROM_u8ReadByte(TEMP_ADDRESS);
 	u8 Local_u8Speed=EEPROM_u8ReadByte(SPEED_ADDRESS);
-	LCD_VoidGotoxy(2,1);
-	LCD_VoidString(Local_u8Words[0]);
-	LCD_VoidGotoxy(2,2);
-	LCD_VoidString(Local_u8Words[1]);
+	if(Local_u8Flag==1)
+	{
+		LCD_VoidGotoxy(2,1);
+		LCD_VoidString(Local_u8Words[0]);
+		LCD_VoidGotoxy(2,2);
+		LCD_VoidString(Local_u8Words[1]);
+		Local_u8Flag=0;
+	}
 	TACTILE_u8GetState(TACTILE_u8Switch1,&Select_SW_State);
 	TACTILE_u8GetState(TACTILE_u8Switch2,&Up_SW_State);
 	TACTILE_u8GetState(TACTILE_u8Switch3,&Down_SW_State);
 	Local_u8Check=(Select_SW_State<<SELECT_BIT)|(Up_SW_State<<UP_BIT)|(Down_SW_State<<DOWN_BIT);
-	DIO_u8WritePortVal(1,Local_u8Check);
+	//DIO_u8WritePortVal(1,Local_u8Check);
 	switch(Local_u8State)
 	{
 	case DISPLAY:
@@ -84,15 +92,23 @@ void app(void)
 		{
 		case SELECT_SW_PRESSED:
 			//LCD_VoidClearScreen();
-			LCD_VoidGotoxy(1,1);
+			LCD_VoidGotoxy(0,1);
+			LCD_VoidData(DASH);
 			LCD_VoidData(SELECT_AROW);
 			//LCD_VoidString(Local_u8Words[0]);
-			LCD_VoidGotoxy(1,2);
+			LCD_VoidGotoxy(0,2);
 			LCD_VoidData(EMPTY);
+			LCD_VoidData(EMPTY);
+			Local_u8SelectFlag=1;
 			//LCD_VoidString(Local_u8Words[1]);
-			Local_u8State=MODES;
+			//Local_u8State=MODES;
 			break;
 		default:
+			if(Local_u8SelectFlag==1)
+			{
+				Local_u8State=MODES;
+				Local_u8SelectFlag=0;
+			}
 			break;
 		}
 		break;
@@ -100,21 +116,37 @@ void app(void)
 		switch(Local_u8Check)
 		{
 		case SELECT_SW_PRESSED:
-			LCD_VoidClearScreen();
-			Local_u8State=Local_u8ModeFlag;
+			//LCD_VoidClearScreen();
+			Local_u8ModeFlag=0;
 			break;
 		case UP_SW_PRESSED:
-			Local_u8ModeFlag=Local_u8ModeFlag^1;
-			LCD_VoidGotoxy(1,(Local_u8ModeFlag+1)%3);
-			LCD_VoidData(SELECT_AROW);
-			LCD_VoidGotoxy(1,(Local_u8ModeFlag+1)%3);
-			LCD_VoidData(EMPTY);
+//			if(Local_u8Flag==0)
+//			{
+			Local_u8ModeToState=Local_u8ModeToState^1;
+//				LCD_VoidGotoxy(0,(Local_u8ModeFlag+1)%3);
+//				LCD_VoidData(DASH);
+//				LCD_VoidData(SELECT_AROW);
+//				LCD_VoidGotoxy(0,(Local_u8ModeFlag+1)%3);
+//				LCD_VoidData(EMPTY);
+//				LCD_VoidData(EMPTY);
+//			}
 			break;
 		case DOWN_SW_PRESSED:
 			LCD_VoidClearScreen();
+			Local_u8Flag=1;
 			Local_u8State=DISPLAY;
 			break;
 		default:
+			LCD_VoidGotoxy(0,(Local_u8ModeToState+1)%3);
+			LCD_VoidData(DASH);
+			LCD_VoidData(SELECT_AROW);
+			LCD_VoidGotoxy(0,(Local_u8ModeToState+1)%3);
+			LCD_VoidData(EMPTY);
+			LCD_VoidData(EMPTY);
+			if(Local_u8ModeFlag==0)
+			{
+				Local_u8State=Local_u8ModeToState;
+			}
 			break;
 		}
 		break;
@@ -122,7 +154,7 @@ void app(void)
 		switch(Local_u8Check)
 		{
 		case SELECT_SW_PRESSED:
-			LCD_VoidClearScreen();
+			//LCD_VoidClearScreen();
 			Local_u8State=MODES;
 			break;
 		case UP_SW_PRESSED:
@@ -130,7 +162,7 @@ void app(void)
 			{
 				Local_u8Temp++;
 				EEPROM_voidWriteByte(Local_u8Temp,TEMP_ADDRESS);
-				LCD_ClearLcd();
+				LCD_VoidClearScreen();
 				Local_voidDisplay(Local_u8Temp,0x51);
 			}
 			else{
@@ -142,7 +174,7 @@ void app(void)
 			{
 				Local_u8Temp--;
 				EEPROM_voidWriteByte(Local_u8Temp,TEMP_ADDRESS);
-				LCD_ClearLcd();
+				LCD_VoidClearScreen();
 				Local_voidDisplay(Local_u8Temp,0x51);
 				//
 			}
@@ -158,14 +190,14 @@ void app(void)
 		switch(Local_u8Check)
 		{
 		case SELECT_SW_PRESSED:
-			LCD_VoidClearScreen();
+			LCD_VoidInit();
 			Local_u8State=MODES;
 			break;
 		case UP_SW_PRESSED:
 			if(Local_u8Speed<=6)
 			{
 				Local_u8Speed++;
-				LCD_ClearLcd();
+				LCD_VoidClearScreen();
 				EEPROM_voidWriteByte(Local_u8Speed,SPEED_ADDRESS);
 				Local_voidDisplay(0x51,Local_u8Speed);
 								//
@@ -178,7 +210,7 @@ void app(void)
 			if(Local_u8Speed>0)
 			{
 				Local_u8Speed--;
-				LCD_ClearLcd();
+				LCD_VoidClearScreen();
 				EEPROM_voidWriteByte(Local_u8Speed,SPEED_ADDRESS);
 				Local_voidDisplay(0x51,Local_u8Speed);
 										//
