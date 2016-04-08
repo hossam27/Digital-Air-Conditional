@@ -30,17 +30,22 @@ extern void EEPROM_voidWriteByte(u8 Copy_u8Data, u16 Copy_u16Addresss)
 
 
 /*Comment!: Read byte from EEPROM*/
-extern u8 EEPROM_u8ReadByte(u16 Copy_u16Address)
+extern u8 EEPROM_u8ReadByte(u16 Copy_u16Address,u8* Copy_u8Data)
 {
-	u8 local_u8EEPROMDATA;
-
+	u8 Local_u8CheckRang = OK;
+	if(Copy_u16Address>MAX_ADDRESS)
+	{
+		Local_u8CheckRang = ERROR;
+	}
+	else
+	{
 /*Comment!:Set address*/
 	ASSIGN_REG(EEPROM_u16EEAR,Copy_u16Address);
 
 /*Comment!:Enable read flag*/
 	SET_BIT(EEPROM_u8EECR,EEPROM_EECR_EERE);
-	local_u8EEPROMDATA=EEPROM_u8EEDR;
-
-	return local_u8EEPROMDATA;
+	*Copy_u8Data=EEPROM_u8EEDR;
+	}
+	return Local_u8CheckRang;
 }
 

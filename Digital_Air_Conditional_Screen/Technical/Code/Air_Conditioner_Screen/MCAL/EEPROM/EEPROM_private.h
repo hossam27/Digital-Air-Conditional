@@ -17,5 +17,8 @@
 #define EEPROM_EECR_EERIE 							3
 
 
+#define MAX_ADDRESS				0x200
+
+
 
 #endif
